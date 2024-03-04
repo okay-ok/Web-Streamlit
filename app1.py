@@ -28,7 +28,7 @@ elif menu == "Eyes-Risk":
     st.sidebar.write(" Upload or take an image to get started.")
     st.write("The AI Model detects cloudiness(Protein Buildup) in your closeup eye-image to check for risk of many diseases (including Cataract and Retinopathy)")
     
-    st.image()
+    
     st.write("---------------------------")
     st.write("Please ensure that your image contains the eye as the majority subject, and the iris is free from any light reflections")
     st.markdown(''':red[Please note that the AI Models present in our backend are not professional medical advice, only a learning method]''')
