@@ -26,7 +26,7 @@ if menu =="Home":
 
 elif menu == "Eyes-Risk":
     st.sidebar.write(" Upload or take an image to get started.")
-    st.write("The AI Model detects cloudiness(Protein Buildup) in your closeup eye-image to check for risk of many diseases (including Cataract and Retinopathy)
+    st.write("The AI Model detects cloudiness(Protein Buildup) in your closeup eye-image to check for risk of many diseases (including Cataract and Retinopathy)")
     
     st.image()
     st.write("---------------------------")
