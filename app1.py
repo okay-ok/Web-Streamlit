@@ -94,10 +94,11 @@ elif menu == "Skin":
 
     if image_input:
             img = image_input.getvalue()
-            analyze = st.sidebar.button("Analyze")
+            
            
             st.image(img)
             st.write("-----------------------------------------")
+            analyze = st.button("Analyze")
             np.set_printoptions(suppress=True)
             #model = tensorflow.models.load_model('model.h5')
             model = tensorflow.keras.models.load_model('best_model (1).h5')
@@ -139,10 +140,11 @@ elif menu == "Skin":
         picture = st.camera_input("Take a picture", key="Lesion_photo" ,help="Click a close up photo of your skin so that we can check and analyse it")
         if picture:
             img = picture.getvalue()
-            analyze = st.sidebar.button("Analyze")
+            
            
             st.image(img)
             st.write("-----------------------------------------")
+            analyze = st.button("Analyze")
             np.set_printoptions(suppress=True)
             #model = tensorflow.models.load_model('model.h5')
             model = tensorflow.keras.models.load_model('best_model (1).h5')
