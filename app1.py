@@ -63,7 +63,7 @@ elif menu == "Eyes-Risk":
                 else:
                     st.write("Please try again with a better quality image.")
 
-    if start_camera:
+    elif start_camera:
         picture = st.camera_input("Take a picture", key="eye_photo" ,help="Click a close up photo of your eye so that we can check and analyse it")
         if picture:
             img = picture.getvalue()
