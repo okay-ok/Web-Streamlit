@@ -7,10 +7,10 @@ from PIL import Image, ImageOps
 import numpy as np
 import time
 
-st.title("DetAll: All HealthCare Detection Tools at one place")
+st.title("Health Companion")
 st.write("------------------------------------------")
 st.sidebar.title("Command Bar")
-choices = ["Home","Eyes", "Skin"]
+choices = ["Home","Eyes-Risk", "Skin"]
 menu = st.sidebar.selectbox("Menu: ", choices)
 st.set_option('deprecation.showfileUploaderEncoding', False)
 if menu =="Home":
@@ -24,7 +24,7 @@ if menu =="Home":
     st.write("---------------------------------")
     st.write(" Explore the sections to your left sidebar. ")
 
-elif menu == "Eyes":
+elif menu == "Eyes-Risk":
     st.sidebar.write("It analyzes cataract, diabetic retinopathy and redness levels. Upload or take an image to get started.")
     st.write("---------------------------")
     image_input = st.file_uploader("Choose an eye image: ", type=['png', 'jpg'])
@@ -56,7 +56,7 @@ elif menu == "Eyes":
                 elif class2 > 3*class1:
                     st.markdown("Your model thinks the eyes are clear with confidence {:.2f}%".format(class2 * 100))
                 else:
-                    st.write("We encountered an ERROR in making a definite prediction. This should be temporary, please try again with a better quality image.")
+                    st.write("Please try again with a better quality image.")
 
     if start_camera:
         picture = st.camera_input("Take a picture", key="eye_photo" ,help="Click a close up photo of your eye so that we can check and analyse it")
@@ -83,13 +83,13 @@ elif menu == "Eyes":
                 if class1 > 3*class2:
                     st.markdown("Your Model predicts the eye cloudiness risk is {:.2f}%".format(class1 * 100) )
                 elif class2 > 3*class1:
-                    st.markdown("Your model does not  by {:.2f}%".format(class2 * 100))
+                    st.markdown("Your model thinks the eyes are clear with confidence {:.2f}%".format(class2 * 100))
                 else:
-                    st.write("We encountered an ERROR in making a definite prediction. This should be temporary, please try again with a better quality image.")
+                    st.write(" Please try again with a better quality image.")
 elif menu == "Skin":
     st.sidebar.write("Get started.")
     st.write("---------------------------")
-    image_input = st.file_uploader("Choose an eye image: ", type=['png', 'jpg'])
+    image_input = st.file_uploader("Choose a CLOSEUP image of the affected skin, with  only the skin present in the image: ", type=['png', 'jpg'])
     start_camera = st.checkbox("Start Camera")
 
     if image_input:
@@ -136,7 +136,7 @@ elif menu == "Skin":
                     st.write("Error! Please upload a better quality image for accuracy.")
 
     if(start_camera):
-        picture = st.camera_input("Take a picture", key="eye_photo" ,help="Click a close up photo of your skin so that we can check and analyse it")
+        picture = st.camera_input("Take a picture", key="Lesion_photo" ,help="Click a close up photo of your skin so that we can check and analyse it")
         if picture:
             img = picture.getvalue()
             analyze = st.sidebar.button("Analyze")
