@@ -135,12 +135,7 @@ elif menu == "Skin":
                         :red[NOTE] \n 
                          1. Please note that :blue[akiec, bcc, df and vasc] may look similar in photos, therefore we have combined their probabilities
                          2. Similarly :blue[nv and mel] may look similar in photos, therefore we have combined their probabilities''')
-                if class1 - class2 > 0.5:
-                    st.markdown("**Benign Detected.** Confidence: {:.2f}%".format(class1 * 100))
-                elif class2 - class1 > 0.5:
-                    st.markdown("**Malign Detected.** Confidence: {:.2f}".format(class2 * 100))
-                else:
-                    st.write("Error! Please upload a better quality image for accuracy.")
+                
 
     if(start_camera):
         picture = st.camera_input("Take a picture", key="Lesion_photo" ,help="Click a close up photo of your skin so that we can check and analyse it")
