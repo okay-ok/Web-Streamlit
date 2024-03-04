@@ -25,7 +25,7 @@ if menu =="Home":
     st.write(" Explore the sections to your left sidebar. ")
 
 elif menu == "Eyes-Risk":
-    st.sidebar.write("It analyzes cataract, diabetic retinopathy and redness levels. Upload or take an image to get started.")
+    st.sidebar.write(" Upload or take an image to get started.")
     st.write("---------------------------")
     image_input = st.file_uploader("Choose an eye image: ", type=['png', 'jpg'])
     start_camera = st.checkbox("Start Camera")
